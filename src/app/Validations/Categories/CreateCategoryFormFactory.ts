@@ -1,6 +1,6 @@
 import { FormGroup } from "@angular/forms";
 import { baseCategoryForm } from "./BaseCategoryFormFactory";
-import { CreateCategoryRequestModel } from "../../../Models/Categories/CreateCategoryRequestModel";
+import { CreateCategoryRequestModel } from "../../Models/Categories/CreateCategoryRequestModel";
 
 export type CreateCategoryForm = FormGroup<ReturnType<typeof baseCategoryForm>>;
 

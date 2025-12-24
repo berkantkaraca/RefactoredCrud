@@ -2,9 +2,9 @@ import { Injectable, inject } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { lastValueFrom } from "rxjs";
 import { API_Config } from "../api.config";
-import { CreateCategoryRequestModel } from "../../Models/Categories/CreateCategoryRequestModel";
-import { UpdateCategoryRequestModel } from "../../Models/Categories/UpdateCategoryRequestModel";
-import { CategoryResponseModel } from "../../Models/Categories/CategoryResponseModel";
+import { CreateCategoryRequestModel } from "../Models/Categories/CreateCategoryRequestModel";
+import { UpdateCategoryRequestModel } from "../Models/Categories/UpdateCategoryRequestModel";
+import { CategoryResponseModel } from "../Models/Categories/CategoryResponseModel";
 
 @Injectable({
     providedIn: 'root'

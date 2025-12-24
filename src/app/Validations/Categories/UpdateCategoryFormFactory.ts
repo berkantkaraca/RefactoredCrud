@@ -1,6 +1,6 @@
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { baseCategoryForm } from "./BaseCategoryFormFactory";
-import { UpdateCategoryRequestModel } from "../../../Models/Categories/UpdateCategoryRequestModel";
+import { UpdateCategoryRequestModel } from "../../Models/Categories/UpdateCategoryRequestModel";
 
 export type UpdateCategoryForm = FormGroup<{
     id: FormControl<number>;

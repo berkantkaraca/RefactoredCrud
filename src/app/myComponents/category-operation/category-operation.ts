@@ -1,7 +1,7 @@
 import { Component, signal, computed, inject, OnInit } from '@angular/core';
 import { AbstractControl, ReactiveFormsModule } from '@angular/forms';
 import { CategoryApi } from '../../DataAccess/category-api';
-import { CategoryResponseModel } from '../../../Models/Categories/CategoryResponseModel';
+import { CategoryResponseModel } from '../../Models/Categories/CategoryResponseModel';
 import { createCategoryForm, toCreateCategoryRequestModel } from '../../Validations/Categories/CreateCategoryFormFactory';
 import { updateCategoryForm, toUpdateCategoryRequestModel } from '../../Validations/Categories/UpdateCategoryFormFactory';
 
