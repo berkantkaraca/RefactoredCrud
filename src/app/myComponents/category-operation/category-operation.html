@@ -1,1 +1,85 @@
-<p>category-operation works!</p>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>İsim</th>
+        <th>Açıklama</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @for (category of categories(); track category.id) {
+    <tr>
+        <td>{{ category.id }}</td>
+        <td>{{ category.categoryName }}</td>
+        <td>{{ category.description }}</td>
+        <td>
+            <button (click)="startUpdate(category)">Düzenle</button>
+            <button (click)="onDelete(category.id)">Sil</button>
+        </td>
+    </tr>
+    }
+</table>
+<hr>
+
+<form [formGroup]="createForm" (ngSubmit)="onCreate()">
+    <h3>Yeni Kategori Ekle</h3>
+    <label>
+        İsim:
+        <input type="text" formControlName="name" />
+    </label>
+    @if(getErrorMessageByName(createForm, 'name'); as msg) {
+    <span style="color: red;">
+        {{ msg }}
+    </span>
+    }
+
+    <br />
+
+    <label>
+        Açıklama:
+        <input type="text" formControlName="description" />
+    </label>
+    @if(getErrorMessageByName(createForm, 'description'); as msg) {
+    <span style="color: red;">
+        {{ msg }}
+    </span>
+    }
+
+    <br />
+    <button type="submit" [disabled]="createForm.invalid">Ekle</button>
+</form>
+
+<hr>
+
+@if(selectedCategory() !== null) {
+    <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+        <h3>Kategori Düzenle</h3>
+        <input type="hidden" formControlName="id" />
+
+        <label>
+            İsim:
+            <input type="text" formControlName="name" />
+        </label>
+        @if(getErrorMessageByName(updateForm, 'name'); as msg) {
+        <span style="color: red;">
+            {{ msg }}
+        </span>
+        }
+
+        <br />
+
+        <label>
+            Açıklama:
+            <input type="text" formControlName="description" />
+        </label>
+        @if(getErrorMessageByName(updateForm, 'description'); as msg) {
+        <span style="color: red;">
+            {{ msg }}
+        </span>
+        }
+
+        <br />
+        <button type="submit" [disabled]="updateForm.invalid">Güncelle</button>
+        <button type="button" (click)="cancelUpdate()">İptal</button>
+    </form>
+}
+
